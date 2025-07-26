@@ -2,7 +2,7 @@
 #define __CONFIG_H__
 
 //Activar o desactivar mensajes de consola
-#define USE_DEBUG_MSG   0
+#define USE_DEBUG_MSG   1
 
 //Configuración APN
 #define APN "internet.comcel.com.co"
@@ -10,7 +10,7 @@
 #define APN_PASSWORD "comcel"
 
 //Configuración RabbitMQ
-#define RABBIT_SERVER "3.136.23.237"
+#define RABBIT_SERVER "18.188.19.113"
 #define RABBIT_PORT 15672
 #define ENDPOINT "/api/exchanges/%2F/amq.default/publish"
 #define RABBIT_USER "guest"
@@ -24,7 +24,7 @@
 #define TOPIC_PUB             "psr/dev/psr-4g-at/data/"
 #define TOPIC_SUB             "psr/dev/psr-4g-at/cmd/"
 #define MQTT_CLIENT_INDEX     0
-#define INCOMING_MSG_TIMEOUT  20000
+#define INCOMING_MSG_TIMEOUT  60000
 
 //Configuración de pines de entrada y salida (Cada número corresponde con el número de pin en el módulo PCF8574)
 #define IN1_PIN   0
@@ -47,7 +47,7 @@
 
 //Configuración Sleep Mode
 #define uS_TO_S_FACTOR  1000000ULL /* Conversion factor for micro seconds to seconds */
-#define TIEMPO_SLEEP    3600         //segundos
+#define TIEMPO_SLEEP    5         //segundos
 
 // Versión de la tarjeta T-SIMCAM
 // #define USE_SIM_CAM_V1_2

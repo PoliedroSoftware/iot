@@ -278,7 +278,7 @@ void checkForIncomingMessages(PCF8574 *expansorGpio, int timeout = 5000) {
   #endif
 
   resp = receiveResponseFromModule(timeout);
-
+  delay(2000);
   /*Formato de la respuesta
     {
       "output1": "1",
@@ -315,6 +315,9 @@ void checkForIncomingMessages(PCF8574 *expansorGpio, int timeout = 5000) {
         #if USE_DEBUG_MSG == 1
           Serial.println("OUT_1 encendido");
         #endif
+        delay(5000);
+        expansorGpio->write(OUT1_PIN, LOW);
+        stateOutPin_1 = 0;
       }
       else {
         //Apagar salida 1
@@ -335,6 +338,9 @@ void checkForIncomingMessages(PCF8574 *expansorGpio, int timeout = 5000) {
         #if USE_DEBUG_MSG == 1
           Serial.println("OUT_2 encendido");
         #endif
+        delay(5000);
+        expansorGpio->write(OUT2_PIN, LOW);
+        stateOutPin_2 = 0;
       }
       else {
         //Apagar salida 2
